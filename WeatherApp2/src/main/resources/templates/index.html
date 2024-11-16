@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>⛅Weather App⛅</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/bg.jpg') no-repeat center center fixed; /* Change here */
+            background-size: cover;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .weather-container {
+            position: relative;
+            height: 200px;
+        }
+        .sun {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .cloud {
+            background-color: white;
+            width: 150px;
+            height: 80px;
+            border-radius: 40px;
+            position: absolute;
+        }
+        .cloud-1 {
+            top: 30px;
+            right: 50px;
+        }
+        .cloud-2 {
+            top: 70px;
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Weather App</h1>
+                    <form action="/weather" method="get">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="city" placeholder="Enter city name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Get Weather</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weather-container">
+        <div class="sun"></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
