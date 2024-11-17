@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>⛅Weather App⛅</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Weather Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/bgimg11.avif') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .weather-icon {
+            font-size: 100px;
+            color: #ffd700;
+            padding-bottom: 10px;
+        }
+        .card-text {
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        .card-text:hover {
+            color: #ffd700;
+        }
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            width: 80%; /* Optional: Adjust table width */
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+<!--            background-color:#ffd700;-->
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h1 class="card-title">Weather in <span th:text="${city}">City</span>, <span th:text="${country}">Country</span></h1>
+                    <span th:classappend="${weatherIcon} + ' weather-icon'"></span>
+                    <p class="card-text"><strong>Description:</strong> <span th:text="${weatherDescription}">Description</span></p>
+                    <p class="card-text"><strong>Temperature:</strong> <span th:text="${temperature}">Temperature</span>°C</p>
+                    <p class="card-text"><strong>Humidity:</strong> <span th:text="${humidity}">Humidity</span>%</p>
+                    <p class="card-text"><strong>Wind Speed:</strong> <span th:text="${windSpeed}">Wind Speed</span> m/s</p>
+                    <p class="card-text"><strong>Air Quality Index:</strong> <span th:text="${aqi}">AQI</span> </p>
+                    <table>
+                        <tr>
+                            <th>CO</th>
+                            <th>NO</th>
+                            <th>NO2</th>
+                            <th>O3</th>
+                            <th>SO2</th>
+                            <th>pm2.5</th>
+                            <th>pm10</th>
+                            <th>NH3</th>
+                        </tr>
+                        <tr>
+                            <td><span th:text="${co}"></span></td>
+                            <td><span th:text="${no}"></span></td>
+                            <td><span th:text="${no2}"></span></td>
+                            <td><span th:text="${o3}"></span></td>
+                            <td><span th:text="${so2}"></span></td>
+                            <td><span th:text="${pm2_5}"></span></td>
+                            <td><span th:text="${pm10}"></span></td>
+                            <td><span th:text="${nh3}"></span></td>
+                        </tr>
+                    </table>
+                    <a href="/" class="btn btn-secondary btn-block " style="background-color: #007bff;">Back</a>
+                    <div th:if="${error}" class="alert alert-danger mt-3">
+                        <p>Error: <span th:text="${error}"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

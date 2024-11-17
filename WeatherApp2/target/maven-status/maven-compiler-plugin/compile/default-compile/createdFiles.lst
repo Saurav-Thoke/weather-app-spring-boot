@@ -1,0 +1,15 @@
+com\saurav\WeatherApp2\model\AqiResponse$AirPollutionData.class
+com\saurav\WeatherApp2\model\CityResponse$Lat.class
+com\saurav\WeatherApp2\model\CityResponse.class
+com\saurav\WeatherApp2\model\WeatherResponse$Weather.class
+com\saurav\WeatherApp2\model\CityResponse$Lon.class
+com\saurav\WeatherApp2\model\WeatherResponse$Sys.class
+com\saurav\WeatherApp2\controller\WeatherController.class
+com\saurav\WeatherApp2\model\AqiResponse.class
+com\saurav\WeatherApp2\model\WeatherResponse$Coord.class
+com\saurav\WeatherApp2\model\WeatherResponse.class
+com\saurav\WeatherApp2\model\WeatherResponse$Main.class
+com\saurav\WeatherApp2\model\AqiResponse$Components.class
+com\saurav\WeatherApp2\model\WeatherResponse$Wind.class
+com\saurav\WeatherApp2\WeatherApp2Application.class
+com\saurav\WeatherApp2\model\AqiResponse$Main.class
