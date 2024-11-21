@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17.0.1-jdk-slim
 WORKDIR /app
 COPY target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
